@@ -30,7 +30,6 @@
             transform: scale(1.05);
         }
 
-        /* Styling untuk tombol panah ke atas */
         #scrollToTop {
             position: fixed;
             bottom: 30px;
@@ -51,28 +50,73 @@
         #scrollToTop:hover {
             background-color: #ffab00;
         }
+
+        /* Splash Screen */
+    #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    #splash-screen.hidden {
+        display: none;
+    }
+
+    /* Animasi Fade In */
+    .animate__fadeIn {
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
     </style>
 </head>
+<!-- Splash Screen -->
+<div id="splash-screen" class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-80 z-50">
+    <div class="text-center text-white">
+
+        <div class="mt-8">
+            <div class="animate__animated animate__fadeIn animate__delay-3s">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-20 mx-auto" />
+                <p>#ambattukoroloampakolampa</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Navbar -->
     <header class="bg-hero text-white py-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center px-6">
+        <div class="container mx-auto flex flex-wrap justify-between items-center px-6">
             <!-- Logo and Title -->
             <div class="flex items-center space-x-3">
-                <!-- Gambar Logo -->
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Himpunan Mahasiswa Selayar" class="h-12 w-auto">
-                <!-- Teks Judul -->
-                <h1 class="text-3xl font-bold">HIMASI_SELAYAR</h1>
+                <h1 class="text-3xl font-bold">HM_SELAYAR</h1>
             </div>
 
-            <nav class="space-x-4 flex items-center">
+            <!-- Menu toggle for mobile -->
+            <div class="block lg:hidden">
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Navigation links -->
+            <nav id="menuItems" class="hidden lg:flex lg:space-x-4 items-center w-full lg:w-auto mt-4 lg:mt-0">
                 <a href="{{ url('/') }}" class="header-link font-medium">Beranda</a>
-               {{-- <a href="{{ route('activities.index') }}" class="header-link font-medium">Kegiatan</a> --}}
                 <a href="#kegiatan" id="scrollButtonKegiatan" class="header-link font-medium">Kegiatan Kami</a>
-                {{-- <a href="{{ route('members.index') }}" class="header-link font-medium">Anggota</a>
-                <a href="{{ route('attendances.index') }}" class="header-link font-medium">Absensi</a> --}}
-                <!-- Kontak Kami Button -->
                 <a href="#kontak" id="scrollButtonKontak" class="bg-yellow-500 text-blue-900 btn-main py-2 px-4 rounded-full font-semibold">Kontak Kami</a>
             </nav>
         </div>
@@ -83,56 +127,58 @@
         @yield('content')
     </main>
 
-    <!-- Footer with "kontak" ID -->
+    <!-- Footer -->
     <footer id="kontak" class="bg-gray-900 text-white py-8 mt-10">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <p class="text-center md:text-left text-gray-400">&copy; 2024 Himpunan Mahasiswa Selayar. All rights reserved.</p>
             <div class="space-x-4 mt-4 md:mt-0">
-                <a href="#" class="text-gray-400 hover:text-yellow-500">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-yellow-500">Twitter</a>
-                <a href="#" class="text-gray-400 hover:text-yellow-500">Instagram</a>
+                <a href="https://www.instagram.com/hm_selayar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-400 hover:text-yellow-500">Instagram</a>
+                <a href="https://www.youtube.com/@hm_selayar" class="text-gray-400 hover:text-yellow-500">YouTube</a>
+                <a href="https://www.tiktok.com/@hm_selayar?is_from_webapp=1&sender_device=pc" class="text-gray-400 hover:text-yellow-500">TikTok</a>
             </div>
         </div>
     </footer>
 
-    <!-- Tombol Panah Kembali ke Atas -->
-    <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-        ↑
-    </button>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
     <script>
-        // Scroll ke bagian Kegiatan Kami
+        // Toggle navigation menu on mobile
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const menuItems = document.getElementById('menuItems');
+            menuItems.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for "Kegiatan Kami" button
         document.getElementById('scrollButtonKegiatan').addEventListener('click', function (e) {
-            e.preventDefault(); // Mencegah aksi default dari <a> tag
-
-            // Scroll ke elemen dengan ID 'kegiatan' secara halus
-            document.querySelector('#kegiatan').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            e.preventDefault();
+            document.querySelector('#kegiatan').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
-        // Scroll ke bagian Kontak Kami
+        // Smooth scroll for "Kontak Kami" button
         document.getElementById('scrollButtonKontak').addEventListener('click', function (e) {
-            e.preventDefault(); // Mencegah aksi default dari <a> tag
-
-            // Scroll ke elemen dengan ID 'kontak' secara halus
-            document.querySelector('#kontak').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            e.preventDefault();
+            document.querySelector('#kontak').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
-        // Menampilkan dan menyembunyikan tombol panah ke atas
+        // Show/hide scroll to top button
         window.onscroll = function() {
             const scrollToTopButton = document.getElementById('scrollToTop');
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollToTopButton.style.display = "block"; // Tampilkan tombol
+                scrollToTopButton.style.display = "block";
             } else {
-                scrollToTopButton.style.display = "none"; // Sembunyikan tombol
+                scrollToTopButton.style.display = "none";
             }
         };
     </script>
-
+<script>
+    // Tunggu beberapa detik untuk menyembunyikan splash screen
+    window.onload = () => {
+        setTimeout(() => {
+            const splashScreen = document.getElementById('splash-screen');
+            splashScreen.classList.add('hidden'); // Sembunyikan splash screen
+        }, 1200); // Splash screen muncul selama 1.2 detik
+    };
+</script>
 </body>
 </html>

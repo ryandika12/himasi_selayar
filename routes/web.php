@@ -37,6 +37,3 @@ Route::get('/', [HomeController::class, 'index']);
 
 
 
-
-
-
