@@ -9,7 +9,7 @@
             <p class="text-lg md:text-2xl text-white mb-8">Isi form di bawah ini untuk bergabung dengan Himpunan Mahasiswa Selayar.</p>
 
             <!-- Form Pendaftaran -->
-            <form action="{{ route('pendaftaran.store') }}" method="POST" class="bg-white text-gray-800 p-6 rounded-lg shadow-xl">
+            <form action="{{ route('pendaftaran.store') }}" method="POST" enctype="multipart/form-data" class="bg-white text-gray-800 p-6 rounded-lg shadow-xl">
                 @csrf
 
                 <!-- Nama Lengkap -->
@@ -49,6 +49,12 @@
                         <option value="ya">Ya</option>
                         <option value="tidak">Tidak</option>
                     </select>
+                </div>
+
+                <!-- Upload Foto -->
+                <div class="mb-4">
+                    <label for="foto" class="block text-lg font-semibold text-gray-700">Upload Foto</label>
+                    <input type="file" id="foto" name="foto" required class="w-full p-3 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
                 </div>
 
                 <!-- Submit Button -->

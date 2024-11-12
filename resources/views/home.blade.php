@@ -55,11 +55,14 @@
                 <!-- Kegiatan 1 -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-200">
                     <div class="relative">
-                        <div class="image-slider w-full h-56 sm:h-64 lg:h-72 relative">
-                            <img src="{{ asset('images/sosial1.jpg') }}" alt="Kegiatan Sosial 1" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
-                            <img src="{{ asset('images/sosial2.jpg') }}" alt="Kegiatan Sosial 2" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
-                            <img src="{{ asset('images/sosial3.jpg') }}" alt="Kegiatan Sosial 3" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
-                            <img src="{{ asset('images/sosial4.JPG') }}" alt="Kegiatan Sosial 4" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <div id="slider1" class="image-slider w-full h-56 sm:h-64 lg:h-72 relative">
+                            <img src="{{ asset('images/sosial6.jpg') }}" alt="Kegiatan Sosial 6" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
+                            <img src="{{ asset('images/sosial1.jpg') }}" alt="Kegiatan Sosial 1" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/sosial3.jpg') }}" alt="Kegiatan Sosial 3" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/sosial4.jpg') }}" alt="Kegiatan Sosial 4" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/sosial5.jpg') }}" alt="Kegiatan Sosial 5" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/sosial2.jpg') }}" alt="Kegiatan Sosial 2" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/sosial7.jpg') }}" alt="Kegiatan Sosial 7" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
                         </div>
                         <div class="p-4">
                             <h3 class="text-xl font-semibold text-gray-800">Kegiatan Sosial di Masyarakat</h3>
@@ -71,28 +74,38 @@
                 <!-- Kegiatan 2 -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-200">
                     <div class="relative">
-                        <div class="image-slider w-full h-56 sm:h-64 lg:h-72 relative">
-                            <img src="{{ asset('images/IT1.jpg') }}" alt="Kegiatan Sosial 1" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
-                            <img src="{{ asset('images/1.jpg') }}" alt="Kegiatan Sosial 2" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
-                            <img src="{{ asset('images/3.jpg') }}" alt="Kegiatan Sosial 3" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
-                            <img src="{{ asset('images/4.JPG') }}" alt="Kegiatan Sosial 4" class="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        <div id="slider2" class="image-slider w-full h-56 sm:h-64 lg:h-72 relative">
+                            <img src="{{ asset('images/IT1.jpg') }}" alt="Kegiatan IT 1" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
+                            <img src="{{ asset('images/IT2.jpg') }}" alt="Kegiatan IT 2" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/IT3.jpg') }}" alt="Kegiatan IT 3" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/IT4.JPG') }}" alt="Kegiatan IT 4" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
                         </div>
                         <div class="p-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Pembelajaran IT dan disiplin lainnya </h3>
+                            <h3 class="text-xl font-semibold text-gray-800">Pembelajaran IT dan disiplin lainnya</h3>
                             <p class="text-gray-600">Menyediakan pendidikan dan pelatihan dalam Teknologi Informasi serta berbagai bidang lainnya untuk mendukung pengembangan keterampilan mahasiswa.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Kegiatan 3 -->
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://via.placeholder.com/400x250" alt="Kegiatan 3" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold text-gray-800">Pelatihan Kepemimpinan</h3>
-                        <p class="text-gray-600">Menyelenggarakan pelatihan kepemimpinan untuk mengembangkan soft skills mahasiswa.</p>
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-200">
+                    <div class="relative">
+                        <div id="slider3" class="image-slider w-full h-56 sm:h-64 lg:h-72 relative">
+                            <img src="{{ asset('images/LK.jpg') }}" alt="Kegiatan LK 1" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" />
+                            <img src="{{ asset('images/LK1.jpg') }}" alt="Kegiatan LK 2" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/LK2.jpg') }}" alt="Kegiatan LK 3" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/LK3.jpg') }}" alt="Kegiatan LK 4" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/LK4.jpg') }}" alt="Kegiatan LK 4" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                            <img src="{{ asset('images/LK5.jpg') }}" alt="Kegiatan LK 4" class="slider-image absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-gray-800">Pelatihan Kepemimpinan</h3>
+                            <p class="text-gray-600">Latihan kepemimpinan adalah program untuk mengembangkan keterampilan memimpin, pengambilan keputusan, dan kerja sama tim agar peserta menjadi pemimpin yang efektif.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+             </div>
         </div>
     </section>
 
@@ -133,24 +146,32 @@
 @endsection
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Pilih semua elemen dengan class 'image-slider'
-        const sliders = document.querySelectorAll('.image-slider');
+    const sliders = [
+        document.getElementById('slider1'),
+        document.getElementById('slider2'),
+        document.getElementById('slider3')
+    ];
 
-        // Loop melalui setiap slider untuk membuat efek pergantian gambar
-        sliders.forEach(slider => {
-            let images = slider.querySelectorAll('img'); // Semua gambar di dalam slider
-            let currentIndex = 0; // Gambar awal
-            let intervalTime = 3000; // Interval waktu 3 detik
+    // Fungsi untuk mengubah gambar dalam slider
+    function changeImage(slider, index) {
+        const images = slider.querySelectorAll('.slider-image');
+        let currentIndex = index;
 
-            setInterval(() => {
-                // Menyembunyikan semua gambar
-                images.forEach((img, index) => {
-                    img.style.opacity = (index === currentIndex) ? 1 : 0;
-                });
+        setInterval(() => {
+            // Reset opacity untuk semua gambar
+            images.forEach((img, i) => {
+                img.style.opacity = i === currentIndex ? '100' : '0';
+            });
 
-                // Update indeks gambar ke gambar berikutnya
-                currentIndex = (currentIndex + 1) % images.length;
-            }, intervalTime);
-        });
+            // Pergi ke gambar berikutnya
+            currentIndex = (currentIndex + 1) % images.length;
+        }, 3000); // Ubah gambar setiap 3 detik
+    }
+
+    // Jalankan fungsi untuk setiap slider
+    sliders.forEach(slider => {
+        changeImage(slider, 0); // Mulai dengan gambar pertama
     });
+});
+
 </script>
